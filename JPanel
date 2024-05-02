@@ -1,0 +1,22 @@
+import javax.swing.*;
+import java.awt.*;
+class frame
+{
+   frame()
+   {
+    JFrame f2=new JFrame("LET'S START WITH JPANEL");
+    f2.setBounds(0,0,500,500);
+    f2.setVisible(true);
+    f2.setResizable(false);
+    GroupLayout lay =new GroupLayout(f2.getContentPane());
+    f2.getContentPane().setLayout(lay);
+    JPanel p1=new JPanel();
+    p1.setBounds(150,50,200,200);
+    p1.setBackground(Color.green);
+    f2.add(p1);
+   }
+   public static void main(String[] args)
+   {
+    frame obj=new frame();
+   }
+}
