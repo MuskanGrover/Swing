@@ -1,0 +1,22 @@
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+class Option
+{
+    public static void main(String[] args)
+    {
+        //JOptionPane.showMessageDialog(null,"THISS IS SOME INFO","title",JOptionPane.PLAIN_MESSAGE);
+        //JOptionPane.showMessageDialog(null,"THISS IS SOME MORE IMPORTANT  INFO","title",JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null,"THISS IS SOME QUESTION FOR YOU","title",JOptionPane.QUESTION_MESSAGE);
+        //JOptionPane.showMessageDialog(null,"WARNING","title",JOptionPane.WARNING_MESSAGE);
+        //JOptionPane.showMessageDialog(null,"OOPS ERROR","title",JOptionPane.ERROR_MESSAGE);c
+
+       // int ans=JOptionPane.showConfirmDialog(null,"BRO DO U EVENCODE","THIS IS THE TITLE",JOptionPane.YES_NO_CANCEL_OPTION)c"C:\Users\KIIT\Desktop\MY JAVA SWING PROJECT\Optionpane.java";
+        //String name=JOptionPane.showInputDialog("what is your name?");
+        //System.out.println("HELLO "+name);
+        ImageIcon im=new ImageIcon("/C://Users//KIIT//Desktop//MY JAVA SWING PROJECT//thumbsup.jpeg/");
+        String[] responses={"NO","HII","YELLOW","RED"};
+        
+
+        JOptionPane.showOptionDialog(null, "AWESOME", "SECRET MESSAGE", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, im, responses, 1);
+   }
+}
