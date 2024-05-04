@@ -1,0 +1,54 @@
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.event.*;
+
+class SliderDemo implements ChangeListener
+{
+    JFrame frame;
+    JPanel panel;
+    JLabel label;
+    JSlider slider;
+
+    SliderDemo()
+    {
+        frame =new JFrame("SLIDER DEMO");
+        panel=new JPanel();
+        label =new JLabel();
+        slider =new JSlider(0,100,50);
+
+        slider.setPreferredSize(new Dimension(400,200));
+
+        slider.setPaintTicks(true);//helps to change color of slider half of diff color another half of diff color
+        slider.setMinorTickSpacing(10);//every 10 units spacing line will appear will help to set ranges
+        slider.setMajorTickSpacing(10);//every 25 units spacing line will be bigger 
+        slider.setPaintLabels(true);
+        slider.setFont(new Font("MV Boli",Font.PLAIN,15));
+        slider.setOrientation(SwingConstants.VERTICAL);
+        slider.addChangeListener(this);
+        label.setFont(new Font("MV Boli",Font.PLAIN,25));
+
+        
+        
+
+        panel.add(slider);
+        panel.add(label);
+
+        frame.add(panel);
+        frame.setSize(420,420);
+        frame.setVisible(true);
+
+
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        
+        label.setText("degree C =" +slider.getValue());
+    }
+}
+public class Test 
+{
+    public static void main(String[] args) {
+        SliderDemo sd =new SliderDemo();
+    }
+}
