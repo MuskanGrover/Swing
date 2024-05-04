@@ -1,0 +1,50 @@
+import javax.swing.*;
+import javax.swing.BorderFactory;
+import java.awt.*;
+class frame 
+{
+    frame()
+    {
+        JFrame fr=new JFrame();
+        fr.setSize(400,400);
+        fr.setVisible(true);
+        fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fr.setLayout(new BorderLayout(10,10));
+
+        JPanel pa=new JPanel();
+        JPanel paa= new JPanel();
+        JPanel pan=new JPanel();
+        JPanel pann=new JPanel();
+        JPanel pane =new JPanel();
+
+        pa.setBackground(Color.red);
+        paa.setBackground(Color.green);
+        pan.setBackground(Color.yellow);
+        pann.setBackground(Color.magenta);
+        pane.setBackground(Color.blue);
+
+        pa.setPreferredSize(new Dimension(100,100));
+        paa.setPreferredSize(new Dimension(100,100));
+        pan.setPreferredSize(new Dimension(100,100));
+        pann.setPreferredSize(new Dimension(100,100));
+        pane.setPreferredSize(new Dimension(100,100));
+
+        fr.add(pa,BorderLayout.NORTH);
+        fr.add(paa,BorderLayout.EAST);
+        fr.add(pan,BorderLayout.WEST);
+        fr.add(pann,BorderLayout.SOUTH);
+        fr.add(pane,BorderLayout.CENTER);
+
+        //ADDING SUBPANELS(PANEL INSIDE OTHER PANEL)
+
+        JPanel subp=new JPanel();
+        subp.setBackground(Color.LIGHT_GRAY);
+        subp.setPreferredSize(new Dimension(100,100));
+        pane.add(subp,BorderLayout.SOUTH);
+
+    }
+    public static void main(String[] args)
+    {
+        frame frt=new frame();
+    }
+}
