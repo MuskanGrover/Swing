@@ -1,0 +1,37 @@
+import javax.swing.*;
+import java.awt.*;
+class frameok
+{
+    frameok()
+    {
+        JFrame fr=new JFrame("PANEL");
+        fr.setSize(900,900);
+        fr.setLayout(null);
+        fr.setVisible(true);
+        JPanel pan=new JPanel();
+        pan.setBackground(Color.RED);
+        pan.setBounds(0,0,250,250);
+        fr.add(pan);
+        JPanel Bluepan=new JPanel();
+        Bluepan.setBackground(Color.BLUE);
+        Bluepan.setBounds(250,0,250,250);
+        fr.add(Bluepan);
+        JPanel greenpan=new JPanel();
+        greenpan.setBackground(Color.GREEN);
+        greenpan.setBounds(0,250,500 ,250);
+        fr.add(greenpan);
+        JLabel laa=new JLabel();
+        ImageIcon im =new ImageIcon("C:/Users/KIIT/Desktop/MY JAVA SWING PROJECT/thumbsup.jpeg");
+        laa.setIcon(im);
+       // laa.setBounds(0,0,70,70);
+        //laa.setText("hii");
+        greenpan.add(laa);
+        //Bluepan.setLayout(new BorderLayout());
+        laa.setVerticalAlignment(JLabel.TOP);
+        laa.setHorizontalAlignment(JLabel.CENTER);
+    }
+    public static void main(String[] args)
+    {
+        frameok frt=new frameok();
+    }
+}
