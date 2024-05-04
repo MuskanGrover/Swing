@@ -1,0 +1,26 @@
+import javax.swing.*;
+import java.awt.*;
+class frameone{
+    frameone()
+    {
+        frameone fra=new frameone("HELLOO PEOPLE");
+        fra.setSize(700,700);
+        fra.setVisible(true);
+        fra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fra.getContentPane().setLayout(null);
+        JLabel la=new JLabel();
+        la.setText("DO U LOVE CODING??");
+        Font myfont=new Font("Calibri",Font.BOLD,40);
+        la.setFont(myfont);
+        Color mycolor=new Color(10,220,70);
+        la.setForeground(mycolor);
+        ImageIcon img =new ImageIcon("C:/Users/KIIT/Desktop/MY JAVA SWING PROJECT/okk.jpg");
+        la.setIcon(img);
+        la.setHorizontalTextPosition(JLabel.LEFT);
+        
+    }
+    public stataic void main(String[] args)
+    {
+
+    }
+}
