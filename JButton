@@ -1,0 +1,56 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+class Myframe extends JFrame implements ActionListener{
+    JButton button;
+    
+    Myframe()
+    {
+        ImageIcon img=new ImageIcon("C:/Users/KIIT/Desktop/MY JAVA SWING PROJECT/thumbsup.jpeg");
+        button=new JButton("CLICK ME");
+        button.setBounds(200,100,600,500);
+        button.addActionListener(this);
+        button.setIcon(img);
+        button.setFocusable(false);//to remove external boundary of the button 
+        button.setHorizontalTextPosition(JButton.CENTER);
+        button.setVerticalTextPosition(JButton.TOP);
+        button.setFont(new Font("Comic Sans",Font.BOLD,30));
+        button.setForeground(Color.MAGENTA);
+        button.setBackground(Color.ORANGE);
+        button.setBorder(BorderFactory.createTitledBorder("okk button"));
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(null);
+        this.setSize(500,500);
+        this.setVisible(true);
+        this.add(button);
+       // button.setEnabled(false);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==button)
+        {
+            System.out.println("BUTTON CLICKED");
+            //button.setEnabled(false);
+        }
+        
+     }
+
+
+}
+public class Demo{
+    public static void main(String[] args)
+    {
+        Myframe fr=new Myframe();
+    }
+
+    
+}
