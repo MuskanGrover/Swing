@@ -1,0 +1,53 @@
+import javax.swing.*;
+import java.awt.*;
+class Progressbar
+{
+    JFrame frame;
+    JProgressBar bar;
+    Progressbar()
+    {
+        frame =new JFrame();
+        frame.setSize(500,500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+        bar=new JProgressBar();
+        bar.setValue(0);
+        bar.setBounds(0,0,500,80);
+        bar.setStringPainted(true);//WILL HELP TO SHOW PERCENTAGE ON PROGRESS BAR
+        bar.setFont(new Font("MV Boli",Font.ITALIC,25));
+        bar.setForeground(Color.PINK);//COLOR OF PROGRESS 
+        bar.setBackground(Color.DARK_GRAY);//BG COLOR OF BAR
+        frame.add(bar);
+
+        fill();//FUNCTION TO INVOKE YOUR NEEDS BY PROGRESS BAR
+    }
+
+    public void fill()
+    {
+        int count=0;
+        while(count<=100)
+        {
+            bar.setValue(count);
+            try {
+                Thread.sleep(100);
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            count+=1;
+    
+        }
+        bar.setString("WE ARE DONE!!!");
+    }
+
+        public static void main(String[] args) 
+        {
+            Progressbar bt=new Progressbar();
+        }
+
+
+    
+    
+}
