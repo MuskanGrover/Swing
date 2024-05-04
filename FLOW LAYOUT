@@ -1,0 +1,42 @@
+mport javax.swing.*;
+import java.awt.*;
+class frametwo
+{
+
+    frametwo()
+    {
+
+    JFrame frame=new JFrame("LAYOUT");
+    frame.setSize(500,500);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    frame.setLayout(new FlowLayout(FlowLayout.LEADING,10,10));
+
+    JPanel panel =new JPanel();
+    panel.setPreferredSize(new Dimension(250,250));
+    panel.setBackground(Color.CYAN);
+    panel.setLayout(new FlowLayout());
+
+    JButton button=new JButton("okk");
+    JButton bt=new JButton("I");
+    JButton bte=new JButton("AM");
+    JButton bto =new JButton("FINE");
+    JButton btee=new JButton("WBU?");
+
+    panel.add(button);
+    panel.add(bt);
+    panel.add(bte);
+    panel.add(bto);
+    panel.add(btee);
+    panel.setVisible(true);
+
+    frame.add(panel);
+    frame.setVisible(true);
+    }
+
+    public static void main(String[] args)
+    {
+        frametwo ft=new frametwo();
+    }
+
+}
