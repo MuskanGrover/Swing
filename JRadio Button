@@ -1,0 +1,70 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+class MyFrame extends JFrame implements ActionListener
+{
+    JRadioButton PizzaButton;
+    JRadioButton BurgerButton;
+    JRadioButton Taco;
+    ImageIcon Pizza;
+    ImageIcon Burger;
+    ImageIcon Tacob;
+    MyFrame()
+    {
+        this.setSize(500,500);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new FlowLayout());
+    
+
+        PizzaButton =new JRadioButton("PIZZA");
+        BurgerButton=new JRadioButton("BURGER");
+        Taco=new JRadioButton("TACO");
+        ButtonGroup group=new ButtonGroup();
+        group.add(PizzaButton);
+        group.add(BurgerButton);
+        group.add(Taco);
+
+        Pizza=new ImageIcon("C:/Users/KIIT/Desktop/MY JAVA SWING PROJECT/pizza.png");
+        PizzaButton.setIcon(Pizza);
+
+        
+        PizzaButton.addActionListener(this);
+        BurgerButton.addActionListener(this);
+        Taco.addActionListener(this);
+
+        this.add(PizzaButton);
+        this.add(BurgerButton);
+        this.add(Taco);
+        this.setVisible(true);
+
+    
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==PizzaButton)
+        {
+            System.out.println("YOU ORDERED PIZZA");
+        }
+        else if(e.getSource()==BurgerButton)
+        {
+            System.out.println("YOU ORDERED BURGER");
+        }
+        else if(e.getSource()==Taco)
+        {
+            System.out.println("YOU ORDERED TACO");
+        }
+
+        
+    }
+
+    
+    
+}
+class DemoTest
+{
+    public static void main(String[] args) {
+        MyFrame fr=new MyFrame();
+    }
+}
