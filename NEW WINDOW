@@ -1,0 +1,58 @@
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+class framee implements ActionListener
+{
+    JButton button;
+    JFrame fra;
+    framee()
+    {
+
+    fra=new JFrame();
+    fra.setSize(400,400);
+    fra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fra.setVisible(true);
+    fra.setLayout(null);
+    button=new JButton("CLICK ME");
+    button.setBounds(200,200,200,200);
+    button.setFocusable(false);
+    button.addActionListener(this);
+    fra.add(button);
+
+    
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+    if(e.getSource()==button)
+    {
+        System.out.println("pooo");
+        fra.dispose();//FRAME WILL ACTIVATE ONLY ONCE
+        NewWindow win=new NewWindow();
+    }
+    }
+}
+ public class NewWindow
+{
+    JFrame Newframe;
+    NewWindow()
+    {
+        Newframe =new JFrame();
+        Newframe.setSize(400,400);
+        Newframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Newframe.setVisible(true);
+        Newframe.setLayout(null);
+    JLabel label=new JLabel("HELLO PEOPLE!!!");
+    label.setBounds(0,0,200,200);
+    Newframe.add(label);
+    Newframe.setVisible(true);
+    }
+    public static void main (String[] args)
+        {
+            framee frt =new framee();
+        }
+}
+    
+ 
+
