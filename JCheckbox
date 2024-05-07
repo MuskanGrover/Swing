@@ -1,0 +1,38 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends JFrame implements ActionListener
+{
+    JButton bttn;
+    JCheckBox ck;
+    MyFrame()
+    {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new FlowLayout());
+         bttn=new JButton();
+        bttn.setText("SUBMIT");
+        bttn.addActionListener(this);
+         ck=new JCheckBox();
+        ck.setText("HII");
+        ck.setFocusable(false);//TO REMOVE BORDER AROUND CHECK BOX
+        this.setVisible(true);
+        this.add(ck);
+        this.add(bttn);
+
+    }
+   
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==bttn)
+        {
+            System.out.println(ck.isSelected());
+        }
+        
+    }
+}
+public class oops{
+    public static void main(String[] args)
+    {
+          MyFrame ft=new MyFrame();
+    }
+}
