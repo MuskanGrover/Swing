@@ -1,0 +1,44 @@
+import java.awt.FlowLayout;
+import java.awt.event.*;
+import javax.swing.*;
+import java.io.File;
+public class Maino
+{
+    public static void main(String[] args)
+    {
+        //JFilechooser= Mechanism to allow user to choose a file (helpful for opening and saving a file)
+        Myframe fr=new Myframe();
+    }
+}
+class Myframe extends JFrame implements ActionListener{
+    JButton button;
+    Myframe()
+    {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new FlowLayout());
+        this.setVisible(true);
+        button=new JButton("SELECT A FILE");
+        button.addActionListener(this);
+        this.add(button);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        if(e.getSource()==button)
+        {
+           
+            JFileChooser fileChooser=new JFileChooser();
+            fileChooser.setCurrentDirectory(new File("C:/Users/KIIT/Desktop"));//TO CHOOSE THE DIRECTORY OF FILE
+           int res= fileChooser.showOpenDialog(null);//select a file from shown dialog box
+           if(res== JFileChooser.APPROVE_OPTION)
+           {
+            File file=new File(fileChooser.getSelectedFile().getAbsolutePath());//TO DISPAY PATH OF CHOOSEN FILE
+            System.out.println(file);
+
+           }
+        }
+        
+    }
+}
