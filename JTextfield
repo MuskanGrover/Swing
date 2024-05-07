@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+class MyFrame extends JFrame implements ActionListener
+{
+    JButton buttn;
+    JTextField tf;
+    MyFrame()
+    {
+        //JTEXTFIELD: A GUI TEXTBOX COMPONENT THAT CAN BE USED TO ADD SET OR GET TEXT
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(500,500);
+        this.setLayout(new FlowLayout());
+        buttn=new JButton("SUBMIT");
+        buttn.addActionListener(this);
+        tf=new JTextField();
+        tf.setPreferredSize(new Dimension(250,40));
+        tf.setFont(new Font("Consolas",Font.PLAIN,35));
+        tf.setForeground(new Color(210,89,180));
+        tf.setBackground(Color.YELLOW);
+        //tf.setEditable(false); TO SET TEXT WHATEVER YOU HAVE ADDED TO BE PERMANENT TEXT
+
+        //tf.setText("username");TO ADD TEXT TO TEXTFIELD
+
+
+        this.add(buttn);
+        this.add(tf);
+        this.setVisible(true);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+        if(e.getSource()==buttn)
+        {
+            System.out.println("WELCOME "+tf.getText());
+            buttn.setEnabled(false);//TO ENABLE BUTTON ONLY ONCE AFTER THAT IT WILL DISABLE ITSELF
+        }
+        
+    }
+    
+
+}
+class Tdemo
+{
+    public static void main(String[] args)
+{
+        MyFrame ft=new MyFrame();
+}
+}
