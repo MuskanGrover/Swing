@@ -1,0 +1,79 @@
+import java.awt.Color;
+import java.awt.event.*;
+import javax.swing.*;
+
+class Myframe extends JFrame implements KeyListener{
+    JLabel label;
+    Myframe()
+    {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(400,400);
+        this.addKeyListener(this);
+        this.setLayout(null);
+        this.getContentPane().setBackground(Color.BLACK);
+
+        this.setVisible(true);
+
+        label =new JLabel();
+        ImageIcon im=new ImageIcon("C:/Users/KIIT/Desktop/MY JAVA SWING PROJECT/car.png");
+        label.setIcon(im);
+    
+
+        label.setBounds(0,0,250,250);
+    
+        //label.setBackground(Color.ORANGE);
+        //label.setOpaque(true);
+        this.add(label);
+    }
+    
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        //KEYPRESSED-GIVES INTEGER OUTPUT WHENEVER A KEY IS PRESSED
+        switch(e.getKeyCode())
+        {
+            case 37: label.setLocation(label.getX()-10,label.getY());
+            break;
+            case 38: label.setLocation(label.getX(),label.getY()-10);
+            break;
+            case 39: label.setLocation(label.getX()+10,label.getY());
+            break;
+            case 40: label.setLocation(label.getX(),label.getY()+10);
+            break;
+        }
+
+
+        
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        //KEYRELEASED -CALLED WHEN KEY IS RELEASED
+        System.out.println("YOU RELEASED THE KEY  "+ e.getKeyChar());
+        System.out.println(("KEY CODE  "+ e.getKeyCode()));
+        
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+         // KEYTYPED-GIVES A CHAR OUTPUT DEPENDING UPON KEY PRESSED 
+        switch(e.getKeyChar())
+        {
+            case 'q': label.setLocation(label.getX()-10,label.getY());
+            break;
+            case'w': label.setLocation(label.getX(),label.getY()-10);
+            break;
+            case'e': label.setLocation(label.getX()+10,label.getY());
+            break;
+            case'r': label.setLocation(label.getX(),label.getY()+10);
+            break;
+        }
+
+    }
+}
+public class Run
+{
+    public static void main(String[] args) {
+        Myframe frt=new Myframe();
+    }
+}
